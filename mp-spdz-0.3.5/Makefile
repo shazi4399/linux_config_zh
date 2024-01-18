@@ -29,6 +29,9 @@ SPDZ = Machines/SPDZ.o $(TINIER)
 
 
 LIB = libSPDZ.a
+lib: $(LIB)
+$(LIB): $(COMMONOBJS)
+	$(AR) -crs $@ $^
 SHAREDLIB = libSPDZ.so
 FHEOFFLINE = libFHE.so
 LIBRELEASE = librelease.a
